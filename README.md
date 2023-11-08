@@ -6,7 +6,7 @@ A **Fast Engineering S/A** busca uma solução para atender ao crescimento expon
 - Implantação de uma infraestrutura na AWS.
 - Utilização de Kubernetes para gerenciar os servidores de aplicação REACT.
 - Configuração de um banco de dados MySQL de alta disponibilidade no Amazon RDS.
-- Armazenamento de recursos estáticos em Amazon S3 ou Amazon EFS.
+- Armazenamento de recursos estáticos em Amazon EFS.
 - Implementação de segurança com AWS IAM.
 - Configuração de backups automáticos no Amazon RDS.
 - Monitoramento e manutenção contínua.
