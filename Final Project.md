@@ -11,33 +11,44 @@ A **Fast Engineering S/A** busca uma solução para atender ao crescimento expon
 - Configuração de backups automáticos no Amazon RDS.
 - Monitoramento e manutenção contínua.
 
-## ARQUITETURA DA NOVA SOLUÇÃO:
-1. **Balanceamento de Carga:**
-   - Tráfego do usuário é direcionado para o Amazon Elastic Load Balancer (ELB) para distribuição equitativa entre os servidores de aplicação.
+## Arquitetura Proposta
 
-2. **Servidores de Aplicação REACT:**
-   - Gerenciados em um cluster Kubernetes usando o Amazon Elastic Kubernetes Service (EKS).
-   - Escalabilidade automática para lidar com picos de demanda.
+### Ambiente Kubernetes:
 
-3. **Banco de Dados MySQL:**
-   - Hospedado no Amazon RDS para alta disponibilidade e redundância.
-   - Configuração MultiAZ assegura continuidade do serviço.
+Utilizaremos o Amazon Elastic Kubernetes Service (EKS) para gerenciar o ambiente Kubernetes, proporcionando escalabilidade e gerenciamento eficiente dos contêineres.
 
-4. **Armazenamento de Recursos Estáticos:**
-   - Imagens, links e recursos estáticos são armazenados em Amazon EFS para eficiência e escalabilidade.
+### Banco de Dados:
 
-5. **Segurança:**
-   - Controle de acesso gerenciado por AWS Identity and Access Management (IAM) para garantir a segurança dos recursos.
-   - Princípio de acesso mínimo necessário.
+Optaremos por usar o Amazon RDS com a opção MySQL como banco de dados gerenciado, oferecendo recursos de alta disponibilidade, escalabilidade e gerenciamento simplificado.
 
-6. **Autoescala:**
-   - Kubernetes e Amazon RDS podem escalar automaticamente para atender ao aumento da demanda.
+### MultiAZ:
 
-7. **Backups Automáticos:**
-   - Amazon RDS realiza backups automáticos dos dados, garantindo a segurança.
+Configuraremos o Amazon RDS Multi-AZ para garantir redundância e alta disponibilidade do banco de dados em diferentes zonas de disponibilidade.
 
-8. **Monitoramento e Manutenção:**
-   - AWS oferece ferramentas de monitoramento para acompanhar a saúde dos recursos e realizar manutenção.
+### Segurança de Backup de Dados:
+
+Implementaremos backups automáticos no Amazon RDS MySQL, garantindo a recuperação dos dados em caso de falhas.
+
+### Persistência dos Dados:
+
+Utilizaremos armazenamento persistente do Amazon EBS (Elastic Block Store) para garantir a persistência dos dados dos contêineres.
+
+### Balanceamento de Carga com Healthcheck:
+
+Configuraremos o Amazon Elastic Load Balancer (ELB) para distribuir o tráfego entre os servidores de aplicação, monitorando a saúde de cada instância por meio de healthchecks.
+
+### Segurança (Liberar Somente o Necessário/Mínimo Acesso Possível):
+
+Implementaremos medidas de segurança, como a utilização do AWS Identity and Access Management (IAM) para controlar o acesso aos recursos, Security Groups para restringir o tráfego de rede e Virtual Private Cloud (VPC) para isolar a infraestrutura.
+
+### Considerações Adicionais:
+
+Utilizaremos contêineres Docker para empacotar a aplicação REACT e suas dependências, permitindo a implantação eficiente no ambiente Kubernetes.
+
+A arquitetura proposta é altamente escalável e pode lidar com o crescimento exponencial do eCommerce da "Fast Engineering S/A".
+
+A integração contínua e a entrega contínua (CI/CD) podem ser implementadas para automatizar o processo de implantação e atualização da aplicação.
+
 
 ## VALORES:
 Vemos depois com calma
