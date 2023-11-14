@@ -55,10 +55,10 @@ A integração contínua e a entrega contínua (CI/CD) podem ser implementadas p
 
 
 ## VALORES:
-Vemos depois com calma
+Detalhado no ppt.
 
 ## PRAZO DE ENTREGA:
-24 de março de 2024.
+Detalhado no ppt.
 
 # Cronograma Macro de Entregas
 
